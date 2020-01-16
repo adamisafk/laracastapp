@@ -11,24 +11,14 @@ class ArticlesController extends Controller
     // Show a list of resources
     public function index() {
         $articles = Article::paginate(5);
-        $view = '';
 
-        if (Request::is('/')) {
-            $view = 'welcome';
-        } elseif (Request::is('articles')) {
-            $view = 'articles.index';
-        } else {
-            abort(404);
-        }
-
-        return view($view, [
+        return view(Request::route()->getName(), [
             'articles' => $articles
         ]);
     }
 
     // Show an individual resource
-    public function show($id) {
-        $article = Article::find($id);
+    public function show(Article $article) {
         return view('articles.show', ['article' => $article]);
     }
 
@@ -39,46 +29,44 @@ class ArticlesController extends Controller
 
     // Persist the new resource
     public function store() {
-        request()->validate([
-            'title' => ['required', 'min:3', 'max:255'],
-            'excerpt' => 'required',
-            'body' => 'required'
-        ]);
+        Article::create($this->validateArticle());
 
-        $article = new Article();
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-        $article->save();
-
-        return redirect('/articles');
+        return redirect(route('articles.index'));
     }
 
     // Shows a view to edit an existing resource
-    public function edit($id) {
-        $article = Article::find($id);
+    public function edit(Article $article) {
         return view('articles.edit', compact('article'));
     }
 
     // Persist the edited resource
-    public function update($id) {
-        request()->validate([
-            'title' => ['required', 'min:3', 'max:255'],
-            'excerpt' => 'required',
-            'body' => 'required'
-        ]);
+    public function update(Article $article) {
+        $article->update($this->validateArticle());
 
-        $article = Article::find($id);
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-        $article->save();
-
-        return redirect('/articles/' . $article->id);
+        return redirect(route('articles.show', $article));
     }
 
     // Delete an existing resource
     public function destroy() {
 
+    }
+
+
+
+
+
+    // Helper Methods
+
+
+    /**
+     * @return array
+     */
+    public function validateArticle()
+    {
+        return request()->validate([
+            'title' => ['required', 'min:3', 'max:255'],
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
     }
 }

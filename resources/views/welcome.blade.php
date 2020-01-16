@@ -14,7 +14,7 @@
         <div id="page" class="container">
             <ul class="style1" style="width: 100%; text-align: center;">
                 @foreach($articles as $article)
-                    <a href="articles/{{$article->id}}">
+                    <a href="{{route('articles.show', $article)}}">
                         <li>
                             <h3>{{$article->title}}</h3>
                             <p>{{$article->excerpt}}</p>

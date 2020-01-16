@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="ce94dbc2-3f83-4767-a0e3-e7e9ba753799" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Article.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticlesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/articles/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/articles/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/articles/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/articles/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/articles/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/articles/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +169,7 @@
       <workItem from="1579031715624" duration="10518000" />
       <workItem from="1579085643883" duration="1157000" />
       <workItem from="1579183672227" duration="2958000" />
-      <workItem from="1579203584057" duration="5797000" />
+      <workItem from="1579203584057" duration="7974000" />
     </task>
     <servers />
   </component>
@@ -181,6 +185,10 @@
       <screen x="0" y="27" width="1600" height="873" />
     </state>
     <state x="537" y="224" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1600.873@0.27.1600.873" timestamp="1579042055939" />
+    <state x="722" y="101" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1579212069551">
+      <screen x="0" y="23" width="1920" height="986" />
+    </state>
+    <state x="722" y="101" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/0.23.1920.986/-1920.95.1920.1057@0.23.1920.986" timestamp="1579212069551" />
     <state width="1558" height="210" key="GridCell.Tab.0.bottom" timestamp="1579031758129">
       <screen x="0" y="27" width="1600" height="873" />
     </state>

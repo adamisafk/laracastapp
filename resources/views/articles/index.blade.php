@@ -12,8 +12,8 @@
                 @foreach($articles as $article)
                     <a href="#">
                         <li>
-                            <a href="/articles/{{$article->id}}"><h3>{{$article->title}}</h3></a>
-                            <a href="/articles/{{$article->id}}"><p>{{$article->excerpt}}</p></a>
+                            <a href="{{route('articles.show', $article)}}"><h3>{{$article->title}}</h3></a>
+                            <a href="{{route('articles.show', $article)}}"><p>{{$article->excerpt}}</p></a>
                         </li>
                     </a>
                 @endforeach
