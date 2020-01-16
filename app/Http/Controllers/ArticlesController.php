@@ -34,22 +34,36 @@ class ArticlesController extends Controller
 
     // Shows a view to create a new resource
     public function create() {
-
+        return view('articles.create');
     }
 
     // Persist the new resource
     public function store() {
+        $article = new Article();
+        $article->title = request('title');
+        $article->excerpt = request('excerpt');
+        $article->body = request('body');
+        $article->save();
 
+        return redirect('/articles');
     }
 
     // Shows a view to edit an existing resource
-    public function edit() {
-
+    public function edit($id) {
+        $article = Article::find($id);
+        return view('articles.edit', compact('article'));
     }
 
     // Persist the edited resource
-    public function update() {
+    public function update($id) {
+        $article = Article::find($id);
 
+        $article->title = request('title');
+        $article->excerpt = request('excerpt');
+        $article->body = request('body');
+        $article->save();
+
+        return redirect('/articles/' . $article->id);
     }
 
     // Delete an existing resource
